@@ -22,7 +22,7 @@ choice=$(echo -e "$options" | rofi -dmenu -config ~/dotfiles/rofi/config-screens
 case $choice in
     $option2)
         grim -g "$(slurp)" - | swappy -f -
-        # grim -g "$(slurp)" $(xdg-user-dir PICTURES)/screenshots/$(date +'%s_grim.png')
+        # grim -g "$(slurp)" /home/loseardes77/screenshots/$(date +'%s_grim.png')
         notify-send "Screenshot created" "Mode: Selected area"
     ;;
     $option3)

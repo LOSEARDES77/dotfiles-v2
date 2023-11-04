@@ -18,23 +18,23 @@ clear
 # Confirm Start
 # ------------------------------------------------------
 
-while true; do
-    read -p "DO YOU WANT TO START THE UPDATE NOW? (Yy/Nn): " yn
-    case $yn in
-        [Yy]* )
-            echo ""
-        break;;
-        [Nn]* ) 
-            exit;
-        break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+# while true; do
+#     read -p "DO YOU WANT TO START THE UPDATE NOW? (Yy/Nn): " yn
+#     case $yn in
+#         [Yy]* )
+#             echo ""
+#         break;;
+#         [Nn]* ) 
+#             exit;
+#         break;;
+#         * ) echo "Please answer yes or no.";;
+#     esac
+# done
 
 if [[ $(_isInstalledYay "Timeshift") == 1 ]];
 then
     while true; do
-        read -p "DO YOU WANT TO CREATE A SNAPSHOT? (Yy/Nn): " yn
+        read -p "Do you want to create a snapshot? [y/n] " yn
         case $yn in
             [Yy]* )
                 echo ""
@@ -57,6 +57,6 @@ echo "Start update"
 echo "-----------------------------------------------------"
 echo ""
 
-yay
+yay -Syyu --noconfirm
 
 notify-send "Update complete"

@@ -10,7 +10,7 @@
 # ----------------------------------------------------- 
 
 # Select wallpaper
-selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -config ~/dotfiles/rofi/config-wallpaper.rasi -p "Wallpapers")
+selected=$(ls -1 ~/wallpaper | grep -e "jpg" -e "png"  | rofi -dmenu -config ~/dotfiles/rofi/config-wallpaper.rasi -p "Wallpapers")
 
 if [ "$selected" ]; then
 
@@ -38,6 +38,8 @@ if [ "$selected" ]; then
 
     # Send notification
     notify-send "Colors and Wallpaper updated" "with image $newwall"
+    sleep 1
+    #~/.config/ags/scripts/color_generation/switchwall.sh
 
     echo "Done."
 fi

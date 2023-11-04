@@ -20,7 +20,7 @@ PS1='[\u@\h \W]\$ '
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
-alias ls='exa -al'
+alias ls='lsd -al'
 alias shutdown='systemctl poweroff'
 alias v='nvim'
 alias ts='~/dotfiles/scripts/snapshot.sh'
@@ -30,6 +30,7 @@ alias od='~/private/onedrive.sh'
 alias rw='~/dotfiles/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
+alias cat="bat"
 
 # -----------------------------------------------------
 # Window Managers
@@ -64,10 +65,10 @@ alias ascii='~/dotfiles/scripts/figlet.sh'
 # VIRTUAL MACHINE
 # -----------------------------------------------------
 
-alias vm='~/private/launchvm.sh'
-alias lg='~/dotfiles/scripts/looking-glass.sh'
-alias vmstart='virsh --connect qemu:///system start win11'
-alias vmstop='virsh --connect qemu:///system destroy win11'
+# alias vm='~/private/launchvm.sh'
+# alias lg='~/dotfiles/scripts/looking-glass.sh'
+# alias vmstart='virsh --connect qemu:///system start win11'
+# alias vmstop='virsh --connect qemu:///system destroy win11'
 
 # -----------------------------------------------------
 # EDIT CONFIG FILES
@@ -108,10 +109,19 @@ eval "$(starship init bash)"
 # -----------------------------------------------------
 # PYWAL
 # -----------------------------------------------------
-cat ~/.cache/wal/sequences
+/bin/cat ~/.cache/wal/sequences
 
 # -----------------------------------------------------
 # PFETCH
 # -----------------------------------------------------
 echo ""
 pfetch
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+source /usr/share/nvm/init-nvm.sh

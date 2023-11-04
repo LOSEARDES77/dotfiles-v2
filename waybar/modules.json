@@ -55,15 +55,6 @@
         },
         "separate-outputs": true
     },
-
-    // Youtube Subscriber Count
-    "custom/youtube": {
-        "format": " {}",
-        "exec": "python ~/private/youtube.py",
-        "restart-interval": 600,
-        "on-click": "brave https://studio.youtube.com",
-        "tooltip": false
-    },
     
     // Cliphist
     "custom/cliphist": {
@@ -122,33 +113,6 @@
         "tooltip": false
     },
 
-    // Brave Launcher
-    "custom/brave": {
-        "format": "",
-        "on-click": "brave",
-        "tooltip": false
-    },
-
-    // ChatGPT Launcher
-    "custom/chatgpt": {
-        "format": "",
-        "on-click": "brave --app=https://chat.openai.com",
-        "tooltip": false
-    },
-
-    // Rofi Calculator
-    "custom/calculator": {
-        "format": "",
-        "on-click": "~/dotfiles/scripts/calculator.sh",
-        "tooltip": false
-    },
-
-    // Windows VM
-    "custom/windowsvm": {
-        "format": "",
-        "on-click": "~/dotfiles/scripts/launchvm.sh",
-        "tooltip": false
-    },
 
     // Rofi Application Launcher
     "custom/appmenu": {
@@ -164,20 +128,9 @@
         "tooltip": false
     },
 
-    // Keyboard State
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-
     // System tray
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 16,
         "spacing": 10
     },
 
@@ -190,22 +143,19 @@
 
     // CPU
     "cpu": {
-        "format": "/ C {usage}% ",
-        "on-click": "alacritty -e htop"
+        "format": "/ C {usage}% "
     },
 
     // Memory
     "memory": {
-        "format": "/ M {}% ",
-        "on-click": "alacritty -e htop"
+        "format": "/ M {}% "
     },
 
     // Harddisc space used
     "disk": {
         "interval": 30,
         "format": "   {percentage_used}% ",
-        "path": "/",
-        "on-click": "alacritty -e htop"
+        "path": "/"
     }, 
     
     // Network
@@ -262,7 +212,7 @@
     "bluetooth": {
         "format-disabled": "",
         "format-off": "",
-        "interval": 30,
+        "interval": 60,
         "on-click": "blueman-manager"
     },
 
@@ -270,6 +220,6 @@
     "user": {
         "format": "{user}",
         "interval": 60,
-        "icon": false,
+        "icon": false
     }
 }

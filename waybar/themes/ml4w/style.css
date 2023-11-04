@@ -30,8 +30,6 @@ window#waybar {
     border-bottom: 0px solid #ffffff;
     /* color: #FFFFFF; */
     background: transparent;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 /* -----------------------------------------------------
@@ -51,6 +49,17 @@ window#waybar {
     color: @textcolor1;
 }
 
+#tray {
+    background-color: @backgroundlight;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color:@textcolor2;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
 #workspaces button {
     padding: 0px 5px;
     margin: 4px 3px;
@@ -58,7 +67,6 @@ window#waybar {
     border: 0px;
     color: @textcolor1;
     background-color: @workspacesbackground2;
-    transition: all 0.3s ease-in-out;
     opacity: 0.4;
 }
 
@@ -67,7 +75,6 @@ window#waybar {
     background: @workspacesbackground2;
     border-radius: 15px;
     min-width: 40px;
-    transition: all 0.3s ease-in-out;
     opacity:1.0;
 }
 
@@ -344,30 +351,16 @@ window#waybar.empty #window {
     background-color: @backgroundlight;
 }
 
-@keyframes blink {
-    to {
-        background-color: @backgroundlight;
-        color: @textcolor2;
-    }
-}
-
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: @textcolor3;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 /* -----------------------------------------------------
  * Tray
  * ----------------------------------------------------- */
 
-#tray {
-    background-color: #2980b9;
-}
+
 
 #tray > .passive {
     -gtk-icon-effect: dim;
